@@ -1,4 +1,5 @@
 import os #find .env file
+import sys
 import boto3 #s3 bucket
 from dotenv import load_dotenv #load variables from .env
 
