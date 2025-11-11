@@ -27,5 +27,5 @@ jobs:
         env:
           aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
           aws_bikepoint_access_key_secret: ${{secrets.aws_bikepoint_access_key_secret}}
-          bucket: ${{secret.bucket}}
+          bucket: ${{secrets.bucket}}
         run: python main.py
