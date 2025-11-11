@@ -18,4 +18,3 @@ filename = 'data/2025-11-05T15-24-58.json'
 s3filename = '2025-11-05T15-24-58.json'
 
 s3_client.upload_file(filename, bucket, s3filename)
-
