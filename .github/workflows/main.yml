@@ -1,0 +1,30 @@
+name: Bike Point Ingestion
+
+on:
+  schedule:
+  # Every 5 mins
+    - cron: '*/5* * * *'
+  # Allow the workflow to run manually
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: bike point environment
+    steps: 
+      - name: Checkout the repo 
+        uses: actions/checkout@v2
+  
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with: 
+          python-version: '3.12.7'
+  
+      - name: Install packages
+        run: pip install -r requirements.txt
+  
+      - name: Run python script
+        env:
+        aws_access_key = ${{secrets.AWS_ACCESS_KEY}
+        aws_bikepoint_access_key_secret = ${{secrets.aws_bikepoint_access_key_secret}}
+        bucket = ${{secret.bucket}}
