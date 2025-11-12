@@ -6,9 +6,9 @@ from dotenv import load_dotenv #load variables from .env
 def load():
     load_dotenv() #load variables from .env
 
-    aws_access_key = os.getenv('SECRET_AWS_ACCESS_KEY')
-    aws_secret_key = os.getenv('SECRET_AWS_BIKEPOINT_ACCESS_KEY_SECRET')
-    bucket = os.getenv('SECRET_BUCKET')
+    aws_access_key = os.getenv('aws_access_key')
+    aws_secret_key = os.getenv('aws_bikepoint_access_key_secret')
+    bucket = os.getenv('bucket')
 
     s3_client = boto3.client(
         's3'
