@@ -9,6 +9,10 @@ def load():
     aws_access_key = os.getenv('aws_access_key')
     aws_secret_key = os.getenv('aws_bikepoint_access_key_secret')
     bucket = os.getenv('bucket')
+    
+    print(aws_access_key)
+    print(aws_secret_key)
+    print(bucket)
 
     s3_client = boto3.client(
         's3'
