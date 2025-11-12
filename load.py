@@ -6,9 +6,9 @@ from dotenv import load_dotenv #load variables from .env
 def load():
     load_dotenv() #load variables from .env
 
-    aws_access_key = os.getenv('aws-access-key')
-    aws_secret_key = os.getenv('aws-bikepoint-access-key-secret')
-    bucket = os.getenv('bucket')
+    aws_access_key = os.getenv('SECRET_AWS_ACCESS_KEY')
+    aws_secret_key = os.getenv('SECRET_AWS_BIKEPOINT_ACCESS_KEY_SECRET')
+    bucket = os.getenv('SECRET_BUCKET')
 
     s3_client = boto3.client(
         's3'
@@ -17,11 +17,11 @@ def load():
     )
 
     try: 
-        try:
-            print(s3_client.list_objects_v2(Bucket=bucket)) # Test if connection is successful
-        except:
-            print('Access denied')
-            sys.exit(1)
+        # try:
+            # print(s3_client.list_objects_v2(Bucket=bucket)) # Test if connection is successful
+        # except:
+            # print('Access denied')
+            # sys.exit(1)
         
         # If so, run this code:
         dir = 'data'
